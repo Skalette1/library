@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    --color: ;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: rgb(255, 255, 255);
+    transition: .5s all ease-in-out;
+    font-family: 'ZTBrosOskon90s';
+    font-size: 1.2rem;
+    transition: .6s all ease-in-out;
+
+}
+
+header {
+    box-shadow: 0 0 15px #000;
+    display: flex;
+    justify-content: space-between;
+    height: 8rem;
+}
+
+h1 {
+    text-shadow: 0px 0px 5px #000;
+    margin-left: 3rem;
+    transform: translateY(2rem);
+    transition: .3s all ease-in;
+}
+
+h1:hover {
+    transform: scale(1.1);
+    margin-top: 2.2rem;
+}
+
+#sun {
+    border: none;
+    background-color: transparent;
+    transform: scale(2.5);
+    margin-right: 5rem;
+    cursor: pointer;
+}
+
+.add {
+    text-align: center;
+    margin: 2rem auto;
+}
+
+.add button {
+    padding: 0.7rem;
+    width: 13rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+#add {
+    cursor: pointer;
+}
+ 
+.modal {
+    transform: translateY(-67%);
+    display: none;
+    width: 320px;
+    margin: 2rem auto;
+    padding: 1rem 0;
+    color: #000;
+    background: #f7f5f5;
+    font-weight: bold;
+    box-shadow: 1px 1px 20px #000;
+    opacity: 0;
+    transition: .7s all ease-in;
+}
+
+.modal input {
+    padding: .7em .4rem;
+    margin: 1rem 0;
+    border: none;
+    border-radius: .2rem;
+    width: 85%;
+    font-size: 1.1rem;
+}
+
+.foot-modal {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: -1rem;
+    margin: .4rem .3rem;
+}
+
+#check {
+    height: 1rem;
+
+}
+
+#public {
+    width: 14rem;
+    padding: .6rem;
+    margin: 1rem 0;
+    background-color: rgb(49, 229, 67);
+    cursor: pointer;
+}
+
+.library {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shelf {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
