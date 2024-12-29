@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../ШРИФТЫ"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Library"
+	}
+}
