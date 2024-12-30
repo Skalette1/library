@@ -31,26 +31,26 @@ function displayElement() {
     `<h3>${books.name}</h3>
     <p>${books.author}</p>
     <p>${books.pages}</p>
-    <button id='toogleRead'>${books.isRead}</button>
-    <button id='delBtn'>Удалить книгу</button>`
+    <button class='toogleRead'>${books.isRead}</button>
+    <button class='delBtn'>Удалить книгу</button>`
     library.appendChild(element);
     element.classList.add('shelf');
 
-    const toogleRead = document.getElementById('toogleRead');
+    const toogleRead = element.querySelector('.toogleRead');
     toogleRead.addEventListener('click',() => {
-     if(toogleRead.textContent === 'Прочтена') {
-    toogleRead.textContent = 'Не прочитана';
-    toogleRead.style.background = '#c60000'
-    }
-     else {
-    toogleRead.textContent = 'Прочтена';
-    toogleRead.style.background = 'green'
-    }
-})
-  const deleteBtn = document.getElementById('delBtn');
+      if(toogleRead.textContent === 'Прочитана') {
+     toogleRead.textContent = 'Не прочитана';
+     toogleRead.style.background = '#c60000'
+     }
+      else {
+     toogleRead.textContent = 'Прочитана';
+     toogleRead.style.background = 'green'
+     }
+ })
+  const deleteBtn = element.querySelector('.delBtn');
   deleteBtn.addEventListener('click',() => {
   element.remove();
-  myLibrary.length = 0;
+  myLibrary.splice(myLibrary.indexOf(books), 1)
   })
  })
 }
@@ -61,8 +61,6 @@ const name = nameInput.value;
 const author = authorInput.value;
 const pages = parseInt(pagesInput.value);
 const isRead = checkBox.checked? 'Прочитана' : 'Не прочитана';
-const checkBack = checkBox.checked ? '#c60000' : 'green';
-checkBox.style.background = checkBack;
    if(name && author && !isNaN(pages)) {
     const newBook = new Book(name, author, pages, isRead);
     myLibrary.push(newBook);
