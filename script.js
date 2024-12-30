@@ -10,7 +10,7 @@ const publicBook = document.getElementById('public');
 const checkBox = document.getElementById('check')
 
 addBook.addEventListener('click', () => {
-    modalWindow.style.cssText = 'opacity: 1; display: flex; flex-direction: column; justify-content: center;align-items: center;text-align: center;gap: 1.2rem; transform: translateY(-55%)';
+    modalWindow.style.cssText = 'opacity: 1; display: flex; flex-direction: column; justify-content: center;align-items: center;text-align: center;gap: 1.2rem;';
     container.style.cssText = 'z-index: .7; opacity: .3';
 })
 
@@ -75,7 +75,7 @@ checkBox.style.background = checkBack;
 
 publicBook.addEventListener('click', () => {
     putBook();
-    modalWindow.style.cssText = 'display: none; transform: translateY(-45%)';
+    modalWindow.style.cssText = 'display: none;';
     container.style.cssText = 'z-index: 1; opacity: 1';
     nameInput.value = '';
     authorInput.value = '';
