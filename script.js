@@ -10,7 +10,7 @@ const publicBook = document.getElementById('public');
 const checkBox = document.getElementById('check')
 
 addBook.addEventListener('click', () => {
-    modalWindow.style.cssText = 'opacity: 1; display: flex; flex-direction: column; justify-content: center;align-items: center;text-align: center;gap: 1.2rem;';
+    modalWindow.style.cssText = 'opacity: 1; display: flex; flex-direction: column; justify-content: center;align-items: center;text-align: center;gap: 1.2rem; transform: translateY(-55%)';
     container.style.cssText = 'z-index: .7; opacity: .3';
 })
 
@@ -23,30 +23,36 @@ function Book(name, author, pages, isRead) {
     this.isRead = isRead;
 }
 
-function findElement() {
+function displayElement() {
   library.textContent = '';
   myLibrary.forEach(books => {
     const element = document.createElement('div');
-    element.innerHTML = `<h3>${books.name}</h3>
+    element.innerHTML = 
+    `<h3>${books.name}</h3>
     <p>${books.author}</p>
     <p>${books.pages}</p>
-    <button id='toogleRead' onclick="toogleBtn()">${books.isRead}</button>
-    <button id='remove' oncklick = 'removeBook()'>Удалить книгу</button>
-    `
+    <button id='toogleRead'>${books.isRead}</button>
+    <button id='delBtn'>Удалить книгу</button>`
     library.appendChild(element);
-    element.classList.add('shelf')
-})
-}
+    element.classList.add('shelf');
 
-function toogleBtn() {
-  if(toogleRead.textContent === 'Прочтена') {
+    const toogleRead = document.getElementById('toogleRead');
+    toogleRead.addEventListener('click',() => {
+     if(toogleRead.textContent === 'Прочтена') {
     toogleRead.textContent = 'Не прочитана';
     toogleRead.style.background = '#c60000'
     }
-    else {
+     else {
     toogleRead.textContent = 'Прочтена';
     toogleRead.style.background = 'green'
     }
+})
+  const deleteBtn = document.getElementById('delBtn');
+  deleteBtn.addEventListener('click',() => {
+  element.remove();
+  myLibrary.length = 0;
+  })
+ })
 }
 
 
@@ -54,25 +60,22 @@ function putBook() {
 const name = nameInput.value;
 const author = authorInput.value;
 const pages = parseInt(pagesInput.value);
-const isRead = checkBox.checked? 'Прочтена' : 'Не прочитана';
-const backgroundColor = checkBox.checked ? '#c60000' : 'green';
+const isRead = checkBox.checked? 'Прочитана' : 'Не прочитана';
+const checkBack = checkBox.checked ? '#c60000' : 'green';
+checkBox.style.background = checkBack;
    if(name && author && !isNaN(pages)) {
     const newBook = new Book(name, author, pages, isRead);
     myLibrary.push(newBook);
-    findElement()
+    displayElement()
    }
    else {
      alert("Заполните все бланки или введите корректные значения")
   }
 }
 
-function removeBook() {
-  newBook.remove();
-}
-
 publicBook.addEventListener('click', () => {
     putBook();
-    modalWindow.style.display = 'none';
+    modalWindow.style.cssText = 'display: none; transform: translateY(-45%)';
     container.style.cssText = 'z-index: 1; opacity: 1';
     nameInput.value = '';
     authorInput.value = '';

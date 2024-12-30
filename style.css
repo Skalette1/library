@@ -8,7 +8,7 @@ body {
     overflow-x: hidden;
     background-color: rgb(255, 255, 255);
     transition: .5s all ease-in-out;
-    font-family: 'ZTBrosOskon90s';
+    font-family: 'roboto';
     font-size: 1.2rem;
     transition: .6s all ease-in-out;
 
@@ -25,6 +25,7 @@ h1 {
     text-shadow: 0px 0px 5px #000;
     margin-left: 3rem;
     transform: translateY(2rem);
+    transition: .3s all ease-in-out;
 }
 
 h1:hover {
@@ -50,14 +51,14 @@ h1:hover {
     width: 13rem;
     font-size: 1.1rem;
     font-weight: bold;
-}
-
-#add {
     cursor: pointer;
+    color: #000;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 0 5px #000;
 }
  
 .modal {
-    transform: translateY(-25%);
     display: none;
     width: 320px;
     margin: 2rem auto;
@@ -103,6 +104,7 @@ h1:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 3rem;
     font-size: 1.2rem;
     font-weight: bold;
@@ -115,25 +117,34 @@ h1:hover {
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    width: 14rem;
+    width: 15rem;
     height: 12rem;
     background: #f7f5f5;
     padding: 2rem 0.7rem;
     margin: 1rem;
     font-size: 1.2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px #000;
 }
 
 #toogleRead {
     border: none; 
     border-radius: .7rem;
-    padding: .6rem; 
-    width: 80%
+    padding: .5rem; 
+    width: 80%;
+    color: #000;
+    font-size: 1.1rem;
+    cursor: pointer;
 }
 
-#remove {
+#delBtn {
     border: none; 
     border-radius: .7rem;
     background-color: #c60000;
-    padding: 0.6rem;
+    padding: 0.5rem;
     width: 80%;
+    color: #000;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
 }

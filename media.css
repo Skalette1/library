@@ -1,0 +1,11 @@
+@media(max-width: 600px) {
+    .library {
+        display: flex;
+        justify-content: center;
+    }
+
+    #sun {
+        transform: scale(1.5);
+        margin-right: 3rem;
+    }
+}
